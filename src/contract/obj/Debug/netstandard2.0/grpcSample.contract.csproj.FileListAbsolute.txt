@@ -1,9 +1,0 @@
-D:\Dev\Repos\grpcSample\src\contract\bin\Debug\netstandard2.0\grpcSample.contract.deps.json
-D:\Dev\Repos\grpcSample\src\contract\bin\Debug\netstandard2.0\grpcSample.contract.dll
-D:\Dev\Repos\grpcSample\src\contract\bin\Debug\netstandard2.0\grpcSample.contract.pdb
-D:\Dev\Repos\grpcSample\src\contract\obj\Debug\netstandard2.0\grpcSample.contract.csprojAssemblyReference.cache
-D:\Dev\Repos\grpcSample\src\contract\obj\Debug\netstandard2.0\grpcSample.contract.csproj.CoreCompileInputs.cache
-D:\Dev\Repos\grpcSample\src\contract\obj\Debug\netstandard2.0\grpcSample.contract.AssemblyInfoInputs.cache
-D:\Dev\Repos\grpcSample\src\contract\obj\Debug\netstandard2.0\grpcSample.contract.AssemblyInfo.cs
-D:\Dev\Repos\grpcSample\src\contract\obj\Debug\netstandard2.0\grpcSample.contract.dll
-D:\Dev\Repos\grpcSample\src\contract\obj\Debug\netstandard2.0\grpcSample.contract.pdb
