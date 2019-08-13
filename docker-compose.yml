@@ -1,0 +1,36 @@
+version: '3.4'
+
+services:
+  db:
+    image: microsoft/mssql-server-linux:latest
+    volumes:
+      - db-data:/var/lib/sql
+    networks: 
+      - db-net
+    environment:
+      ACCEPT_EULA: "Y"
+      SA_PASSWORD: P@ssw0rd
+  grpcsample.server:    
+    image: ${DOCKER_REGISTRY-}grpcsampleserver
+    build:
+      context: .
+      dockerfile: src/server/Dockerfile
+    depends_on:
+      - db
+    networks:
+      - app-net
+      - db-net
+  grpcsample.client:
+    image: ${DOCKER_REGISTRY-}grpcsampleclient
+    build:
+      context: .
+      dockerfile: src/client/Dockerfile
+    depends_on:
+      - grpcsample.server
+    networks:
+      - app-net
+volumes:
+  db-data:
+networks:
+  app-net:
+  db-net:

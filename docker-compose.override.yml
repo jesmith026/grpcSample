@@ -1,0 +1,12 @@
+version: '3.4'
+
+services:  
+  grpcsample.server:
+    environment:
+      - ASPNETCORE_ENVIRONMENT=Development
+  grpcsample.client:
+    environment:
+      - ASPNETCORE_ENVIRONMENT=Development
+    ports:
+      - "8080:80"
+

@@ -5,11 +5,11 @@
   </PropertyGroup>
 
   <ItemGroup>
-  <Protobuf Include="student.proto" Link="student.proto" />
-</ItemGroup>
+    <Protobuf Include="student.proto" Link="student.proto" />
+  </ItemGroup>
 
   <ItemGroup>
-    <PackageReference Include="Google.Protobuf" Version="3.8.0" />
+    <PackageReference Include="Google.Protobuf" Version="3.9.1" />
     <PackageReference Include="Grpc" Version="1.22.0" />
     <PackageReference Include="Grpc.Tools" Version="1.22.0">
       <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>

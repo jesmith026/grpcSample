@@ -9,7 +9,7 @@ import "google/protobuf/empty.proto";
 service Students {
     rpc AddStudent (NewStudentRequest) returns (StudentDto) { }
 	rpc GetStudent (GetStudentRequest) returns (StudentDto) { }
-	rpc GetAllStudents (.google.protobuf.Empty) returns (stream .Students.StudentDto) { }
+	rpc GetAllStudents (google.protobuf.Empty) returns (stream .Students.StudentDto) { }
 }
 
 message NewStudentRequest {

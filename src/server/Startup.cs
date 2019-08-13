@@ -1,4 +1,7 @@
+using System;
+using System.Linq;
 using grpcSample.Server.Data;
+using grpcSample.Server.Data.Entities;
 using grpcSample.Server.Services;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
@@ -36,12 +39,35 @@ namespace grpcSample.server
         {
             if (env.IsDevelopment())
                 app.UseDeveloperExceptionPage();
-            
+            app.UpdateDb();
             app.UseRouting();
             app.UseEndpoints(endpoints =>
             {
                 endpoints.MapGrpcService<StudentService>();
             });
         }
+    }
+
+    internal static class Extensions {
+
+        public static void UpdateDb(this IApplicationBuilder app) {
+
+            using var scope = app.ApplicationServices.CreateScope();
+            var provider = scope.ServiceProvider;
+            var db = provider.GetService<SchoolContext>();
+            if (db.Database.GetPendingMigrations().Any())
+                db.Database.Migrate();
+
+            if (!db.Students.Any()) {
+                for (var i = 0; i < 20; i++) {
+                    var student = new Student {Name = Guid.NewGuid().ToString()};
+                    db.Students.Add(student);
+                }
+
+                db.SaveChanges();
+            }
+
+        }
+
     }
 }
